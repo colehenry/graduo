@@ -1,11 +1,11 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
-import { NavigationStackProp } from "react-navigation-stack";
+import { NavigationScreenProp, NavRoute } from "../NavUtils";
 
 // This defines what kind of props the screen accepts
 // Since we navigate to it via react-navigation it only gets a navigation prop
 interface IProps {
-  navigation: NavigationStackProp;
+  navigation: NavigationScreenProp<NavRoute.Home>;
 }
 
 export default class HomeScreen extends React.Component<IProps> {
@@ -21,6 +21,6 @@ export default class HomeScreen extends React.Component<IProps> {
 
   // This is a function that will navigate you to the ListScreen
   private onPressButton = () => {
-    this.props.navigation.navigate("List");
+    this.props.navigation.navigate(NavRoute.List);
   };
 }
